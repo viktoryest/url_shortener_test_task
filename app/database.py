@@ -1,6 +1,5 @@
 import sqlite3
-from contextlib import contextmanager
-from typing import Iterator
+from typing import Generator
 
 DB_PATH = "urls.db"
 
@@ -16,8 +15,7 @@ def init_db() -> None:
         """)
 
 
-@contextmanager
-def get_db() -> Iterator[sqlite3.Connection]:
+def get_db() -> Generator[sqlite3.Connection, None, None]:
     conn = sqlite3.connect(DB_PATH, timeout=5)
     conn.row_factory = sqlite3.Row
     try:
