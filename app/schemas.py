@@ -12,10 +12,7 @@ class URLInfo(BaseModel):
         max_length=16,
         description="Unique generated code identifying the URL"
     )
-    short_url: HttpUrl = Field(
-        ...,
-        description="Shortened URL used for redirect"
-    )
+    short_url: str
     full_url: HttpUrl
 
     model_config = ConfigDict(from_attributes=True)
