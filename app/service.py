@@ -1,6 +1,6 @@
 import sqlite3
 
-from utils import generate_short_code
+from app.utils import generate_short_code
 
 MAX_ATTEMPTS = 5
 

@@ -1,12 +1,13 @@
 import sqlite3
 
-from database import get_db
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.responses import RedirectResponse
-from logger import logger
-from schemas import URLCreate, URLInfo
-from service import create_short_code, get_full_url
-from utils import build_short_url
+
+from app.database import get_db
+from app.logger import logger
+from app.schemas import URLCreate, URLInfo
+from app.service import create_short_code, get_full_url
+from app.utils import build_short_url
 
 router = APIRouter()
 
